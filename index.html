@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Your Name — developer, designer, and problem solver." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#6ee7b7; --glass: rgba(255,255,255,0.04);
+      --max-width:1100px; --radius:12px; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#071029 0%,var(--bg) 100%); color:#e6eef6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.5; padding:32px 20px;
+      display:flex; justify-content:center;
+    }
+    .container{width:100%; max-width:var(--max-width)}
+    header{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:36px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4f46e5);
+      display:grid;place-items:center;font-weight:700;color:#012;box-shadow:0 6px 20px rgba(79,70,229,0.15)
+    }
+    nav{display:flex; gap:12px; flex-wrap:wrap}
+    nav a{color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:8px}
+    nav a:hover{color:var(--accent); background:var(--glass)}
+
+    .hero{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      padding:28px;border-radius:var(--radius); display:flex; gap:28px; align-items:center;
+      box-shadow:0 6px 30px rgba(2,6,23,0.6); margin-bottom:28px;
+    }
+    .hero-left{flex:1}
+    .hero h1{margin:0;font-size:clamp(24px,4vw,40px)}
+    .hero p{color:var(--muted); margin:12px 0 18px; max-width:70%}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#60a5fa); color:#012; border:none; padding:10px 14px; border-radius:10px;
+      font-weight:600; cursor:pointer; text-decoration:none;
+    }
+    .btn.ghost{background:transparent;color:var(--accent); border:1px solid rgba(255,255,255,0.06)}
+    .profile{
+      width:140px;height:140px;border-radius:16px; background:linear-gradient(135deg,#0ea5a1,#60a5fa);
+      display:grid; place-items:center; font-weight:700; color:#051025; font-size:28px;
+    }
+
+    .grid{display:grid; gap:20px; grid-template-columns:repeat(12,1fr)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .card.col-8{grid-column:span 8}
+    .card.col-4{grid-column:span 4}
+
+    h2{margin:0 0 12px 0}
+    .projects{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(220px,1fr))}
+    .project{
+      padding:14px; border-radius:10px; background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent); border:1px solid rgba(255,255,255,0.03);
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .project .meta{display:flex; justify-content:space-between; color:var(--muted); font-size:13px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03); color:var(--muted); padding:6px 8px; border-radius:999px; font-size:12px}
+
+    ul.skills{display:flex; gap:8px; flex-wrap:wrap; padding:0; margin:0; list-style:none}
+    ul.skills li{background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:8px; color:var(--muted); font-size:13px}
+
+    footer{margin-top:26px; text-align:center; color:var(--muted); font-size:14px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .card.col-8{grid-column:span 12}
+      .card.col-4{grid-column:span 12}
+      .hero{flex-direction:column; align-items:flex-start}
+      .hero p{max-width:100%}
+      header{flex-direction:column; align-items:flex-start; gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <main class="container" id="top">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">YN</div>
+        <div>
+          <div style="font-weight:700">Your Name</div>
+          <div style="color:var(--muted); font-size:13px">Developer • Designer • Open-source</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="btn ghost" style="padding:8px 10px">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="intro">
+      <div class="hero-left">
+        <h1 id="intro">Hi — I'm Your Name<span style="color:var(--accent)">.</span></h1>
+        <p>I'm a full-stack developer who builds useful, accessible web apps and experiments with open-source tooling. I focus on clean interfaces, solid engineering, and learning new things every day.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">View GitHub</a>
+          <a class="btn ghost" href="Your_Resume_Link.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div class="profile" aria-hidden="true">YN</div>
+        <div style="text-align:center;color:var(--muted);font-size:14px">San Francisco, CA • Open to work</div>
+      </div>
+    </section>
+
+    <div class="grid" style="align-items:start">
+      <section class="card col-8" id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected projects</h2>
+        <div class="projects">
+          <!-- Project 1 -->
+          <article class="project">
+            <div style="display:flex;justify-content:space-between;align-items:start">
+              <div>
+                <strong>Project One</strong>
+                <div style="color:var(--muted);font-size:13px;margin-top:6px">Short 1–2 line description that explains what it does and why it matters.</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <a href="https://github.com/your-username/project-one" target="_blank" rel="noopener noreferrer" class="tag">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="tag">Live</a>
+              </div>
+            </div>
+            <div class="meta" style="margin-top:8px">
+              <span class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Node</span>
+                <span class="tag">Tailwind</span>
+              </span>
+              <span style="color:var(--muted)">⭐ 200</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project">
+            <div style="display:flex;justify-content:space-between;align-items:start">
+              <div>
+                <strong>Project Two</strong>
+                <div style="color:var(--muted);font-size:13px;margin-top:6px">A small utility or library you maintain—mention why it's useful.</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <a href="https://github.com/your-username/project-two" target="_blank" rel="noopener noreferrer" class="tag">GitHub</a>
+              </div>
+            </div>
+            <div class="meta" style="margin-top:8px">
+              <span class="tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">CLI</span>
+              </span>
+              <span style="color:var(--muted)">Updated 2026</span>
+            </div>
+          </article>
+
+          <!-- Add more projects here -->
+        </div>
+      </section>
+
+      <aside class="card col-4" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p style="color:var(--muted);margin-top:8px">
+          I'm a software engineer focused on building accessible, performant web apps. I enjoy working on open-source projects and learning new systems. When I'm not coding I like climbing and cooking.
+        </p>
+
+        <h3 style="margin-top:18px">Contact</h3>
+        <p style="color:var(--muted);margin:8px 0">Email: <a id="emailLink" href="mailto:you@example.com" style="color:var(--accent)">you@example.com</a></p>
+        <p style="color:var(--muted);margin:8px 0">Social: 
+          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Twitter</a> · 
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">LinkedIn</a>
+        </p>
+
+        <h3 style="margin-top:18px">Quick facts</h3>
+        <ul style="color:var(--muted);padding-left:18px;margin:8px 0">
+          <li>Available for freelance & full-time</li>
+          <li>Open-source contributor</li>
+          <li>Enjoys mentorship & building communities</li>
+        </ul>
+      </aside>
+
+      <section class="card col-8" id="skills" aria-labelledby="skills-heading" style="margin-top:12px">
+        <h2 id="skills-heading">Skills</h2>
+        <ul class="skills" style="margin-top:10px">
+          <li>JavaScript / TypeScript</li>
+          <li>React / Next.js</li>
+          <li>Node / Express</li>
+          <li>HTML & CSS</li>
+          <li>Testing & CI</li>
+          <li>Docker / Cloud</li>
+        </ul>
+      </section>
+
+      <section class="card col-4" style="margin-top:12px">
+        <h2>Get in touch</h2>
+        <p style="color:var(--muted);margin-top:8px">Prefer email? Click the button to copy my address to your clipboard or use the mail link above.</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn" id="copyEmail">Copy email</button>
+          <a class="btn ghost" href="mailto:you@example.com">Email me</a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Built with ❤️ — <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">GitHub</a> · <a href="#top" style="color:var(--muted)">Back to top</a>
+    </footer>
+  </main>
+
+  <script>
+    // Copy email to clipboard
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      const email = 'you@example.com';
+      try {
+        await navigator.clipboard.writeText(email);
+        const btn = document.getElementById('copyEmail');
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(()=> btn.textContent = old, 1600);
+      } catch (e) {
+        alert('Copy failed — please copy manually: ' + email);
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
