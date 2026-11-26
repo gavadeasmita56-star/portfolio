@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Web Page</title>
+</head>
+<body>
+
+    <h1>Welcome to HTML</h1>
+    <h2>My First Website</h2>
+
+    <p>Hello! My name is Asmita.</p>
+
+    <b>This is Bold Text</b>
+    <br>
+    <i>This is Italic Text</i>
+    <br>
+    <u>This is Underline Text</u>
+
+    <h3>My Hobbies</h3>
+    <ul>
+        <li>Reading</li>
+        <li>Listening Music</li>
+        <li>Travelling</li>
+    </ul>
+
+</body>
+</html>
